@@ -1,0 +1,182 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Transfer_Report" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Out_Config" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="Folder_path" Type="InOutArgument(x:String)" />
+    <x:Property Name="Arg_Status" Type="InOutArgument(x:Boolean)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1208,827</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Transfer_Report_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="66">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Transfer_Report" sap:VirtualizedContainerService.HintSize="476,383" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="Transfer_Data" />
+      <Variable x:TypeArguments="x:String" Name="Yesterday" />
+      <Variable x:TypeArguments="s:IFormatProvider" Name="Today" />
+      <Variable x:TypeArguments="x:String" Name="Dte_1" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,291" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="839,1047" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Transfer Data Process Started&quot;]" />
+          <Assign sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Dte_1]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Date.Now.DayOfWeek.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <If Condition="[Dte_1=&quot;Monday&quot;]" sap:VirtualizedContainerService.HintSize="797,493" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,335" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" ConnectionString="Dsn=Paper_Ad;uid=RPA_RO;pwd=Robot#123" DataTable="[Transfer_Data]" DisplayName="Run query" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" ProviderName="System.Data.Odbc" Sql="---Transfer data from apr 2022 to till date&#xA;select distinct t1.emp_code,&#xA;       e.emp_name,&#xA;       t1.from_dt     present_date,&#xA;       p1.post_name   present_post,&#xA;       t1.branch_id   present_branch_id,&#xA;       b1.branch_name present_branchname,&#xA;       de1.dep_name   present_department,&#xA;       t2.from_dt     previous_date,&#xA;       p2.post_name   previous_post,&#xA;       t2.branch_id   previous_branch_id,&#xA;       b2.branch_name previous_branch_name,&#xA;       de2.dep_name   previous_department,&#xA;       t1.enter_by entered_by_code,&#xA;       f.emp_name entered_by_name&#xA;  from mana0809.employ_transfer_dtl t1 left outer join&#xA;  mana0809.employee_master f on (to_char(t1.enter_by)=to_char(f.emp_code)),&#xA;       mana0809.employee_master      e,&#xA;       mana0809.employ_transfer_dtl t2,&#xA;       mana0809.post_mst             p1,&#xA;       mana0809.post_mst             p2,&#xA;       mana0809.department_mst       de1,&#xA;       mana0809.department_mst       de2,&#xA;       mana0809.branch_dtl_new       b1,&#xA;       mana0809.branch_dtl_new       b2&#xA; where t1.emp_code = e.emp_code&#xA;   and t1.emp_code = t2.emp_code&#xA;   and t1.post_id = p1.post_id&#xA;   and t2.post_id = p2.post_id&#xA;   and t1.branch_id = b1.BRANCH_ID&#xA;   and t2.branch_id = b2.BRANCH_ID&#xA;   and de1.dep_id = t1.department_id&#xA;   and de2.dep_id = t2.department_id&#xA;   and t1.status_id = 8&#xA;   and t2.status_id = 8&#xA;  and t2.to_dt = (t1.from_dt - 1)&#xA;   --and t1.from_dt &gt;= '01-oct-2022'&#xA;   and t1.from_dt &lt;= trunc(sysdate)&#xA;   and t1.from_dt = trunc(sysdate)-2-- between '01-jan-2022' and '31-aug-2022'\&#xA;   and (b1.branch_id=0 or b2.branch_id=0)&#xA;   and (t1.to_dt&lt;&gt; t2.to_dt or t1.to_dt is null)&#xA;   and not exists (select * from mana0809.employ_promotion_dtl a where a.emp_code=t1.emp_code and t1.from_dt=a.from_dt and a.status_id=7)&#xA;   order by t1.emp_code,t1.from_dt&#xA;">
+                  <ui:ExecuteQuery.Parameters>
+                    <InArgument x:TypeArguments="x:String" x:Key="Yesterday">[Yesterday]</InArgument>
+                  </ui:ExecuteQuery.Parameters>
+                </ui:ExecuteQuery>
+                <ui:WriteRange AddHeaders="True" DataTable="[Transfer_Data]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Transfer Details" StartingCell="A1" WorkbookPath="[Folder_path+Out_Config(&quot;Transfer&quot;).ToString]" />
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,335" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" ConnectionString="Dsn=Paper_Ad;uid=RPA_RO;pwd=Robot#123" DataTable="[Transfer_Data]" DisplayName="Run query" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" ProviderName="System.Data.Odbc" Sql="---Transfer data from apr 2022 to till date&#xA;select distinct t1.emp_code,&#xA;       e.emp_name,&#xA;       t1.from_dt     present_date,&#xA;       p1.post_name   present_post,&#xA;       t1.branch_id   present_branch_id,&#xA;       b1.branch_name present_branchname,&#xA;       de1.dep_name   present_department,&#xA;       t2.from_dt     previous_date,&#xA;       p2.post_name   previous_post,&#xA;       t2.branch_id   previous_branch_id,&#xA;       b2.branch_name previous_branch_name,&#xA;       de2.dep_name   previous_department,&#xA;       t1.enter_by entered_by_code,&#xA;       f.emp_name entered_by_name&#xA;  from mana0809.employ_transfer_dtl t1 left outer join&#xA;  mana0809.employee_master f on (to_char(t1.enter_by)=to_char(f.emp_code)),&#xA;       mana0809.employee_master      e,&#xA;       mana0809.employ_transfer_dtl t2,&#xA;       mana0809.post_mst             p1,&#xA;       mana0809.post_mst             p2,&#xA;       mana0809.department_mst       de1,&#xA;       mana0809.department_mst       de2,&#xA;       mana0809.branch_dtl_new       b1,&#xA;       mana0809.branch_dtl_new       b2&#xA; where t1.emp_code = e.emp_code&#xA;   and t1.emp_code = t2.emp_code&#xA;   and t1.post_id = p1.post_id&#xA;   and t2.post_id = p2.post_id&#xA;   and t1.branch_id = b1.BRANCH_ID&#xA;   and t2.branch_id = b2.BRANCH_ID&#xA;   and de1.dep_id = t1.department_id&#xA;   and de2.dep_id = t2.department_id&#xA;   and t1.status_id = 8&#xA;   and t2.status_id = 8&#xA;  and t2.to_dt = (t1.from_dt - 1)&#xA;   --and t1.from_dt &gt;= '01-oct-2022'&#xA;   and t1.from_dt &lt;= trunc(sysdate)&#xA;   and t1.from_dt = trunc(sysdate)-1-- between '01-jan-2022' and '31-aug-2022'\&#xA;   and (b1.branch_id=0 or b2.branch_id=0)&#xA;   and (t1.to_dt&lt;&gt; t2.to_dt or t1.to_dt is null)&#xA;   and not exists (select * from mana0809.employ_promotion_dtl a where a.emp_code=t1.emp_code and t1.from_dt=a.from_dt and a.status_id=7)&#xA;   order by t1.emp_code,t1.from_dt&#xA;">
+                  <ui:ExecuteQuery.Parameters>
+                    <InArgument x:TypeArguments="x:String" x:Key="Yesterday">[Yesterday]</InArgument>
+                  </ui:ExecuteQuery.Parameters>
+                </ui:ExecuteQuery>
+                <ui:WriteRange AddHeaders="True" DataTable="[Transfer_Data]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Transfer Details" StartingCell="A1" WorkbookPath="[Folder_path+Out_Config(&quot;Transfer&quot;).ToString]" />
+              </Sequence>
+            </If.Else>
+          </If>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Transfer Data Process Completed&quot;]" />
+          <Assign sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[Arg_Status]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="si:IOException" sap:VirtualizedContainerService.HintSize="400,129" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="si:IOException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="si:IOException" Name="exception" />
+            </ActivityAction.Argument>
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[Arg_Status]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+              </Assign.Value>
+            </Assign>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
