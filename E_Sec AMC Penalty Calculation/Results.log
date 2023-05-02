@@ -1,0 +1,352 @@
+
+SQL*Loader: Release 19.0.0.0.0 - Production on Tue May 2 12:07:07 2023
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   Control.txt
+Data File:      C:\Users\376307\Documents\UiPath\E_Sec AMC Penalty Calculation\Final_Report\Complaint Transaction Report.csv
+  Bad File:     Complaint Transaction Report.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Continuation:    none specified
+Path used:      Direct
+
+Table ESEC_COMPLAINT, loaded from every logical record.
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+COMPLAINT_NO                        FIRST     *   ,  O(") CHARACTER            
+CUSTOMER_ID                          NEXT     *   ,  O(") CHARACTER            
+CUSTOMER_NAME                        NEXT     *   ,  O(") CHARACTER            
+STATE_NAME                           NEXT     *   ,  O(") CHARACTER            
+COMPLAINT_DESCRIPTION                NEXT     *   ,  O(") CHARACTER            
+COMPLAINT_TYPE                       NEXT     *   ,  O(") CHARACTER            
+EQUIPMENT_TYPE                       NEXT     *   ,  O(") CHARACTER            
+PRIORITY_TYPE                        NEXT     *   ,  O(") CHARACTER            
+COMPLAINT_DATETIME                   NEXT     *   ,  O(") CHARACTER            
+COMPLAINT_DATE                       NEXT     *   ,  O(") CHARACTER            
+COMPLAINT_TIME                       NEXT     *   ,  O(") CHARACTER            
+COMPLAINT_RAISED_BY                  NEXT     *   ,  O(") CHARACTER            
+VENDOR_NAME                          NEXT     *   ,  O(") CHARACTER            
+ASSIGNED_DATE                        NEXT     *   ,  O(") CHARACTER            
+CLOSE_DATETIME                       NEXT     *   ,  O(") CHARACTER            
+CLOSE_DATE                           NEXT     *   ,  O(") CHARACTER            
+RESOLUTION_TYPE                      NEXT     *   ,  O(") CHARACTER            
+COMPLAINT_AGE                        NEXT     *   ,  O(") CHARACTER            
+COMMENT_DATE                         NEXT     *   ,  O(") CHARACTER            
+COMMENTS                             NEXT     *   ,  O(") CHARACTER            
+
+Record 19: Discarded - all columns null.
+Record 26: Discarded - all columns null.
+Record 29: Discarded - all columns null.
+Record 31: Discarded - all columns null.
+Record 33: Discarded - all columns null.
+Record 38: Discarded - all columns null.
+Record 44: Discarded - all columns null.
+Record 53: Discarded - all columns null.
+Record 93: Discarded - all columns null.
+Record 96: Discarded - all columns null.
+Record 104: Discarded - all columns null.
+Record 107: Discarded - all columns null.
+Record 111: Discarded - all columns null.
+Record 118: Discarded - all columns null.
+Record 123: Discarded - all columns null.
+Record 125: Discarded - all columns null.
+Record 130: Discarded - all columns null.
+Record 132: Discarded - all columns null.
+Record 139: Discarded - all columns null.
+Record 143: Discarded - all columns null.
+Record 145: Discarded - all columns null.
+Record 150: Discarded - all columns null.
+Record 152: Discarded - all columns null.
+Record 157: Discarded - all columns null.
+Record 160: Discarded - all columns null.
+Record 162: Discarded - all columns null.
+Record 164: Discarded - all columns null.
+Record 166: Discarded - all columns null.
+Record 169: Discarded - all columns null.
+Record 173: Discarded - all columns null.
+Record 179: Discarded - all columns null.
+Record 189: Discarded - all columns null.
+Record 191: Discarded - all columns null.
+Record 198: Discarded - all columns null.
+Record 201: Discarded - all columns null.
+Record 206: Discarded - all columns null.
+Record 219: Discarded - all columns null.
+Record 223: Discarded - all columns null.
+Record 225: Discarded - all columns null.
+Record 227: Discarded - all columns null.
+Record 266: Discarded - all columns null.
+Record 269: Discarded - all columns null.
+Record 281: Discarded - all columns null.
+Record 283: Discarded - all columns null.
+Record 287: Discarded - all columns null.
+Record 290: Discarded - all columns null.
+Record 293: Discarded - all columns null.
+Record 295: Discarded - all columns null.
+Record 298: Discarded - all columns null.
+Record 304: Discarded - all columns null.
+Record 340: Discarded - all columns null.
+Record 344: Discarded - all columns null.
+Record 347: Discarded - all columns null.
+Record 351: Discarded - all columns null.
+Record 353: Discarded - all columns null.
+Record 356: Discarded - all columns null.
+Record 366: Discarded - all columns null.
+Record 374: Discarded - all columns null.
+Record 378: Discarded - all columns null.
+Record 380: Discarded - all columns null.
+Record 383: Discarded - all columns null.
+Record 388: Discarded - all columns null.
+Record 391: Discarded - all columns null.
+Record 394: Discarded - all columns null.
+Record 425: Discarded - all columns null.
+Record 432: Discarded - all columns null.
+Record 442: Discarded - all columns null.
+Record 446: Discarded - all columns null.
+Record 454: Discarded - all columns null.
+Record 462: Discarded - all columns null.
+Record 464: Discarded - all columns null.
+Record 471: Discarded - all columns null.
+Record 474: Discarded - all columns null.
+Record 498: Discarded - all columns null.
+Record 504: Discarded - all columns null.
+Record 506: Discarded - all columns null.
+Record 516: Discarded - all columns null.
+Record 526: Discarded - all columns null.
+Record 531: Discarded - all columns null.
+Record 558: Discarded - all columns null.
+Record 563: Discarded - all columns null.
+Record 577: Discarded - all columns null.
+Record 617: Discarded - all columns null.
+Record 660: Discarded - all columns null.
+Record 664: Discarded - all columns null.
+Record 667: Discarded - all columns null.
+Record 670: Discarded - all columns null.
+Record 677: Discarded - all columns null.
+Record 679: Discarded - all columns null.
+Record 694: Discarded - all columns null.
+Record 739: Discarded - all columns null.
+Record 741: Discarded - all columns null.
+Record 743: Discarded - all columns null.
+Record 745: Discarded - all columns null.
+Record 750: Discarded - all columns null.
+Record 759: Discarded - all columns null.
+Record 761: Discarded - all columns null.
+Record 768: Discarded - all columns null.
+Record 772: Discarded - all columns null.
+Record 774: Discarded - all columns null.
+Record 776: Discarded - all columns null.
+Record 786: Discarded - all columns null.
+Record 791: Discarded - all columns null.
+Record 802: Discarded - all columns null.
+Record 813: Discarded - all columns null.
+Record 820: Discarded - all columns null.
+Record 823: Discarded - all columns null.
+Record 833: Discarded - all columns null.
+Record 835: Discarded - all columns null.
+Record 841: Discarded - all columns null.
+Record 846: Discarded - all columns null.
+Record 849: Discarded - all columns null.
+Record 853: Discarded - all columns null.
+Record 858: Discarded - all columns null.
+Record 863: Discarded - all columns null.
+Record 865: Discarded - all columns null.
+Record 867: Discarded - all columns null.
+Record 870: Discarded - all columns null.
+Record 871: Discarded - all columns null.
+Record 876: Discarded - all columns null.
+Record 884: Discarded - all columns null.
+Record 890: Discarded - all columns null.
+Record 892: Discarded - all columns null.
+Record 910: Discarded - all columns null.
+Record 913: Discarded - all columns null.
+Record 916: Discarded - all columns null.
+Record 920: Discarded - all columns null.
+Record 922: Discarded - all columns null.
+Record 924: Discarded - all columns null.
+Record 927: Discarded - all columns null.
+Record 930: Discarded - all columns null.
+Record 939: Discarded - all columns null.
+Record 941: Discarded - all columns null.
+Record 948: Discarded - all columns null.
+Record 951: Discarded - all columns null.
+Record 955: Discarded - all columns null.
+Record 962: Discarded - all columns null.
+Record 966: Discarded - all columns null.
+Record 971: Discarded - all columns null.
+Record 973: Discarded - all columns null.
+Record 976: Discarded - all columns null.
+Record 981: Discarded - all columns null.
+Record 983: Discarded - all columns null.
+Record 997: Discarded - all columns null.
+Record 999: Discarded - all columns null.
+Record 1012: Discarded - all columns null.
+Record 1024: Discarded - all columns null.
+Record 1030: Discarded - all columns null.
+Record 1032: Discarded - all columns null.
+Record 1036: Discarded - all columns null.
+Record 1039: Discarded - all columns null.
+Record 1041: Discarded - all columns null.
+Record 1054: Discarded - all columns null.
+Record 1058: Discarded - all columns null.
+Record 1060: Discarded - all columns null.
+Record 1063: Discarded - all columns null.
+Record 1066: Discarded - all columns null.
+Record 1068: Discarded - all columns null.
+Record 1073: Discarded - all columns null.
+Record 1075: Discarded - all columns null.
+Record 1078: Discarded - all columns null.
+Record 1091: Discarded - all columns null.
+Record 1100: Discarded - all columns null.
+Record 1102: Discarded - all columns null.
+Record 1107: Discarded - all columns null.
+Record 1109: Discarded - all columns null.
+Record 1111: Discarded - all columns null.
+Record 1118: Discarded - all columns null.
+Record 1128: Discarded - all columns null.
+Record 1131: Discarded - all columns null.
+Record 1142: Discarded - all columns null.
+Record 1145: Discarded - all columns null.
+Record 1149: Discarded - all columns null.
+Record 1163: Discarded - all columns null.
+Record 1172: Discarded - all columns null.
+Record 1176: Discarded - all columns null.
+Record 1184: Discarded - all columns null.
+Record 1199: Discarded - all columns null.
+Record 1201: Discarded - all columns null.
+Record 1203: Discarded - all columns null.
+Record 1207: Discarded - all columns null.
+Record 1209: Discarded - all columns null.
+Record 1218: Discarded - all columns null.
+Record 1224: Discarded - all columns null.
+Record 1226: Discarded - all columns null.
+Record 1231: Discarded - all columns null.
+Record 1233: Discarded - all columns null.
+Record 1239: Discarded - all columns null.
+Record 1244: Discarded - all columns null.
+Record 1249: Discarded - all columns null.
+Record 1252: Discarded - all columns null.
+Record 1254: Discarded - all columns null.
+Record 1257: Discarded - all columns null.
+Record 1260: Discarded - all columns null.
+Record 1264: Discarded - all columns null.
+Record 1266: Discarded - all columns null.
+Record 1313: Discarded - all columns null.
+Record 1316: Discarded - all columns null.
+Record 1331: Discarded - all columns null.
+Record 1334: Discarded - all columns null.
+Record 1337: Discarded - all columns null.
+Record 1339: Discarded - all columns null.
+Record 1341: Discarded - all columns null.
+Record 1343: Discarded - all columns null.
+Record 1350: Discarded - all columns null.
+Record 1354: Discarded - all columns null.
+Record 1369: Discarded - all columns null.
+Record 1371: Discarded - all columns null.
+Record 1374: Discarded - all columns null.
+Record 1384: Discarded - all columns null.
+Record 1399: Discarded - all columns null.
+Record 1425: Discarded - all columns null.
+Record 1427: Discarded - all columns null.
+Record 1429: Discarded - all columns null.
+Record 1433: Discarded - all columns null.
+Record 1440: Discarded - all columns null.
+Record 1455: Discarded - all columns null.
+Record 1470: Discarded - all columns null.
+Record 1487: Discarded - all columns null.
+Record 1488: Discarded - all columns null.
+Record 1507: Discarded - all columns null.
+Record 1509: Discarded - all columns null.
+Record 1511: Discarded - all columns null.
+Record 1513: Discarded - all columns null.
+Record 1526: Discarded - all columns null.
+Record 1528: Discarded - all columns null.
+Record 1530: Discarded - all columns null.
+Record 1532: Discarded - all columns null.
+Record 1534: Discarded - all columns null.
+Record 1537: Discarded - all columns null.
+Record 1539: Discarded - all columns null.
+Record 1545: Discarded - all columns null.
+Record 1552: Discarded - all columns null.
+Record 1554: Discarded - all columns null.
+Record 1558: Discarded - all columns null.
+Record 1560: Discarded - all columns null.
+Record 1562: Discarded - all columns null.
+Record 1564: Discarded - all columns null.
+Record 1566: Discarded - all columns null.
+Record 1568: Discarded - all columns null.
+Record 1577: Discarded - all columns null.
+Record 1600: Discarded - all columns null.
+Record 1602: Discarded - all columns null.
+Record 1604: Discarded - all columns null.
+Record 1606: Discarded - all columns null.
+Record 1611: Discarded - all columns null.
+Record 1616: Discarded - all columns null.
+Record 1639: Discarded - all columns null.
+Record 1645: Discarded - all columns null.
+Record 1647: Discarded - all columns null.
+Record 1651: Discarded - all columns null.
+Record 1664: Discarded - all columns null.
+Record 1666: Discarded - all columns null.
+Record 1668: Discarded - all columns null.
+Record 1676: Discarded - all columns null.
+Record 1680: Discarded - all columns null.
+Record 1721: Discarded - all columns null.
+Record 1723: Discarded - all columns null.
+Record 1729: Discarded - all columns null.
+Record 1739: Discarded - all columns null.
+Record 1748: Discarded - all columns null.
+Record 1766: Discarded - all columns null.
+Record 1773: Discarded - all columns null.
+Record 1782: Discarded - all columns null.
+Record 1793: Discarded - all columns null.
+Record 1795: Discarded - all columns null.
+Record 1797: Discarded - all columns null.
+Record 1803: Discarded - all columns null.
+Record 1810: Discarded - all columns null.
+Record 1812: Discarded - all columns null.
+Record 1815: Discarded - all columns null.
+Record 1827: Discarded - all columns null.
+Record 1894: Discarded - all columns null.
+Record 1901: Discarded - all columns null.
+Record 1903: Discarded - all columns null.
+Record 1912: Discarded - all columns null.
+Record 1917: Discarded - all columns null.
+Record 1921: Discarded - all columns null.
+Record 1923: Discarded - all columns null.
+Record 1972: Discarded - all columns null.
+Record 1988: Discarded - all columns null.
+Record 1992: Discarded - all columns null.
+
+Table ESEC_COMPLAINT:
+  1745 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  282 Rows not loaded because all fields were null.
+
+Bind array size not used in direct path.
+Column array  rows :    5000
+Stream buffer bytes:  256000
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:          2027
+Total logical records rejected:         0
+Total logical records discarded:      282
+Total stream buffers loaded by SQL*Loader main thread:        1
+Total stream buffers loaded by SQL*Loader load thread:        1
+
+Run began on Tue May 02 12:07:07 2023
+Run ended on Tue May 02 12:07:12 2023
+
+Elapsed time was:     00:00:05.24
+CPU time was:         00:00:00.34
