@@ -1,0 +1,241 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Report_Download" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Folder_path" Type="InArgument(x:String)" />
+    <x:Property Name="Arg_Status" Type="InArgument(x:Boolean)" />
+    <x:Property Name="In_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1305,3096</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Report_Download_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="35">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Report_Download" sap:VirtualizedContainerService.HintSize="785,3031" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="Todayrpt" />
+      <Variable x:TypeArguments="sd:DataTable" Name="MTDRpt" />
+      <Variable x:TypeArguments="sd:DataTable" Name="PreviousRpt" />
+      <Variable x:TypeArguments="ui:DatabaseConnection" Name="DB_CONN" />
+      <Variable x:TypeArguments="sd:DataTable" Name="YTDRpt" />
+      <Variable x:TypeArguments="x:Boolean" Name="Folderexst" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="743,2939" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="705,2712" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="663,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Report downloading started&quot;]" />
+          <ui:DatabaseConnect DisplayName="Connect to database" sap:VirtualizedContainerService.HintSize="663,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=RPA_RO;uid=RPA_RO;pwd=Robot#123" DatabaseConnection="[DB_CONN]" />
+          <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[Folderexst]" sap:VirtualizedContainerService.HintSize="663,114" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Folder_path+In_Config(&quot;Report&quot;).ToString]" PathType="Folder" />
+          <If Condition="[Folderexst=True]" sap:VirtualizedContainerService.HintSize="663,341" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:DeleteFolderX DisplayName="Delete Folder" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Path="[Folder_path+In_Config(&quot;Report&quot;).ToString]" Recursive="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:DeleteFolderX>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Folder Does Not Exist&quot;]" />
+              </Sequence>
+            </If.Else>
+          </If>
+          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="663,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Folder_path+In_Config(&quot;Report&quot;).ToString]" />
+          <ui:CopyFile ContinueOnError="{x:Null}" Destination="[Folder_path+In_Config(&quot;Report&quot;).ToString]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="663,152" sap2010:WorkflowViewState.IdRef="CopyFile_1" Path="[Folder_path+&quot;\UiPath\R AND D MTD LEAVE REPORT\Master\R &amp; D Department Leave Count.xlsx&quot;]" />
+          <ui:DatabaseTransaction ContinueOnError="{x:Null}" DatabaseConnection="{x:Null}" DisplayName="Start Transaction" ExistingDbConnection="[DB_CONN]" sap:VirtualizedContainerService.HintSize="663,673" sap2010:WorkflowViewState.IdRef="DatabaseTransaction_1" UseTransaction="True">
+            <ui:DatabaseTransaction.Body>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,564" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[Todayrpt]" DisplayName="Today" ExistingDbConnection="[DB_CONN]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="----Today Punchung Report----&#xA;select 'EMPLOYEE CODE',&#xA;       'EMP NAME',&#xA;       'POST',&#xA;       'DATE',&#xA;       'MORNING TIME',&#xA;       'EVENING TIME',&#xA;       'REMARKS',&#xA;       'BLOCK'&#xA;  from dual&#xA;union all&#xA;select to_char(da.emp_code),&#xA;       em.EMP_NAME,&#xA;       p.post_name,&#xA;       to_char(curr_date) as day,&#xA;       decode(da.m_time, NULL, '----------', da.m_time) as morning_time,&#xA;       decode(e_time, NULL, '----------', e_time) as evening_time,&#xA;       case&#xA;         when (da.m_time is null and da.pay_id not in (50, 52)) and&#xA;              (da.pay_id not in (51, 52) and da.e_time is null) then&#xA;          'Absent'&#xA;         else&#xA;          case&#xA;            when da.pay_id in (50) and da.e_time is not null then&#xA;             'Morning-REG'&#xA;            else&#xA;             case&#xA;               when da.pay_id in (51) and da.m_time is not null then&#xA;                'Evening-REG'&#xA;               else&#xA;                case&#xA;                  when da.pay_id in (52) then&#xA;                   'BOTH-REG'&#xA;                  else&#xA;                   case&#xA;                     when (da.m_time &gt; bt1.in_time and da.m_time &lt;&gt; 'TOUR' and&#xA;                          da.m_time &lt;&gt; 'COMPEN' and da.pay_id not in (50, 7, 52)) and&#xA;                          (da.e_time is null and da.pay_id not in (51, 7, 52)) then&#xA;                      'Late &amp; Non-Marking'&#xA;                     else&#xA;                      case&#xA;                        when da.m_time &lt;= bt1.in_time and&#xA;                             (da.e_time is null and da.pay_id not in (51, 52)) then&#xA;                         'Non-Marking Evening'&#xA;                        else&#xA;                         case&#xA;                           when (da.m_time is null and da.pay_id not in (50, 52, 7)) and&#xA;                                da.e_time &lt; bt2.out_time then&#xA;                            'Non-Marking Morning &amp; Early-Going'&#xA;                           else&#xA;                            case&#xA;                              when (da.m_time is null and da.pay_id not in (50, 52)) and&#xA;                                   da.e_time &gt;= bt2.out_time then&#xA;                               'Non-Marking Morning'&#xA;                              else&#xA;                               case&#xA;                                 when da.m_time &lt;= bt1.in_time and&#xA;                                      (da.e_time &lt; bt2.out_time and da.e_time &lt;&gt; 'TOUR' and&#xA;                                      da.e_time &lt;&gt; 'COMPEN' and da.pay_id not in (51, 52, 7)) then&#xA;                                  'Early-Going'&#xA;                                 else&#xA;                                  case&#xA;                                    when (da.m_time &gt; bt1.in_time and da.pay_id not in (50, 52)) and&#xA;                                         (da.e_time &lt; bt2.out_time and da.pay_id not in (51, 52, 7)) then&#xA;                                     'Late &amp; Early Going'&#xA;                                    else&#xA;                                     case&#xA;                                       when (da.m_time &gt; bt1.in_time and da.m_time &lt;&gt; 'TOUR' and&#xA;                                            da.m_time &lt;&gt; 'COMPEN' and da.pay_id not in (50, 52, 7)) and&#xA;                                            da.e_time &gt;= bt2.out_time then&#xA;                                        'Late'&#xA;                                       else&#xA;                                        case&#xA;                                          when da.pay_id in (50) and da.E_TIME is null then&#xA;                                           'REG-Morning &amp; Non-Marking Evening'&#xA;                                          else&#xA;                                           case&#xA;                                             when da.pay_id in (51) and da.M_TIME is null then&#xA;                                              'REG-EVENING &amp; Non-Marking Morning'&#xA;                                             else&#xA;                                              case&#xA;                                                when da.pay_id in (50) and da.e_time &lt;&gt; 'TOUR' and&#xA;                                                     da.e_time &lt;&gt; 'COMPEN' and da.E_TIME &lt; bt2.out_time then&#xA;                                                 'REG-Morning &amp; Early-Going'&#xA;                                                else&#xA;                                                 case&#xA;                                                   when da.pay_id in (51) and da.m_time &lt;&gt; 'TOUR' and&#xA;                                                        da.m_time &lt;&gt; 'COMPEN' and da.M_TIME &gt; bt1.in_time then&#xA;                                                    'REG-Evening &amp; Late'&#xA;                                                   else&#xA;                                                    case&#xA;                                                      when da.pay_id in (52) then&#xA;                                                       'REG-Morning &amp; Evening'&#xA;                                                      else&#xA;                                                       '-'&#xA;                                                    end&#xA;                                                 end&#xA;                                              end&#xA;                                           end&#xA;                                        end&#xA;                                     end&#xA;                                  end&#xA;                               end&#xA;                            end&#xA;                         end&#xA;                      end&#xA;                   end&#xA;                end&#xA;             end&#xA;          end&#xA;       end as remarks,&#xA;       case&#xA;         when da.gun_status &lt;&gt; 0 then&#xA;          'PUNCHING-BLOCK'&#xA;         else&#xA;          '--'&#xA;       end as block&#xA;  from mana0809.daily_attend       da,&#xA;       mana0809.emp_master         em,&#xA;       mana0809.time_tab           bt1,&#xA;       mana0809.time_tab           bt2,&#xA;       mana0809.branch_dtl_new     b,&#xA;       mana0809.post_mst           p,&#xA;       mana0809.department_mst     dp,&#xA;       mana0809.branch_time        bt,&#xA;       mana0809.designation_master d&#xA; where em.emp_code = da.emp_code&#xA;   and da.FIRM_ID = 1&#xA;   and da.curr_date = to_date(sysdate)&#xA;   and bt1.shift_id = da.m_shift&#xA;   and bt2.shift_id = da.e_shift&#xA;   and da.branch_id = b.BRANCH_ID&#xA;   and p.post_id = em.POST_ID&#xA;   and d.designation_id = em.DESIGNATION_ID&#xA;   and dp.dep_id=em.DEPARTMENT_ID&#xA;   and bt.branch_id=b.BRANCH_ID&#xA;   and em.DEPARTMENT_ID='645'">
+                  <ui:ExecuteQuery.Parameters>
+                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                  </ui:ExecuteQuery.Parameters>
+                </ui:ExecuteQuery>
+                <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[MTDRpt]" DisplayName="MTD" ExistingDbConnection="[DB_CONN]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" Sql="--------Leave Type Report-------&#xD;&#xA;select *&#xD;&#xA;  from (select a.emp_code,&#xD;&#xA;               a.emp_name,&#xD;&#xA;               l.leave_type,&#xD;&#xA;               t.leave_frdate,&#xD;&#xA;               t.leave_todate,&#xD;&#xA;               t.leave_days&#xD;&#xA;          from mana0809.employee_master  a,&#xD;&#xA;               mana0809.employ_leave_dtl t,&#xD;&#xA;               mana0809.leave_master     l&#xD;&#xA;         where a.emp_code = t.emp_code&#xD;&#xA;           and t.leave_process_id = 1&#xD;&#xA;           and a.status_id = 1&#xD;&#xA;           and a.emp_type &lt;&gt; 4&#xD;&#xA;           and a.department_id = 645&#xD;&#xA;           and t.leave_id &lt;&gt; 4&#xD;&#xA;           and t.leave_id = l.leave_id&#xD;&#xA;           and t.leave_frdate &gt;= TRUNC(SYSDATE, 'MM')&#xD;&#xA;           And t.leave_todate &lt;= trunc(sysdate)-1&#xD;&#xA;        union all&#xD;&#xA;        select a.emp_code,&#xD;&#xA;               a.emp_name,&#xD;&#xA;               l.leave_type,&#xD;&#xA;               t.leave_frdate,&#xD;&#xA;               t.leave_todate,&#xD;&#xA;               t.leave_days&#xD;&#xA;          from mana0809.employee_master  a,&#xD;&#xA;               mana0809.employ_leave_dtl t,&#xD;&#xA;               mana0809.leave_master     l&#xD;&#xA;         where a.emp_code = t.emp_code&#xD;&#xA;           and t.leave_process_id in (1, 2)&#xD;&#xA;           and a.status_id = 1&#xD;&#xA;           and a.emp_type &lt;&gt; 4&#xD;&#xA;           and a.department_id = 645&#xD;&#xA;           and t.leave_id = 4&#xD;&#xA;           and t.leave_id = l.leave_id&#xD;&#xA;           and t.leave_frdate &gt;= TRUNC(SYSDATE, 'MM')&#xD;&#xA;           And t.leave_todate &lt;= trunc(sysdate)-1&#xD;&#xA;        union all&#xD;&#xA;        select a.emp_code,&#xD;&#xA;               a.emp_name,&#xD;&#xA;               l.leave_type,&#xD;&#xA;               t.leave_frdate,&#xD;&#xA;               t.leave_todate,&#xD;&#xA;               t.leave_days&#xD;&#xA;          from mana0809.employee_master           a,&#xD;&#xA;               mana0809.HRM_EMP_LEAVE_APPLICATION t,&#xD;&#xA;               mana0809.leave_master              l&#xD;&#xA;         where a.emp_code = t.emp_code&#xD;&#xA;           and a.status_id = 1&#xD;&#xA;           and a.emp_type &lt;&gt; 4&#xD;&#xA;           and a.department_id = 645&#xD;&#xA;           and t.status_id = 2&#xD;&#xA;           and t.leave_id = 5&#xD;&#xA;           and t.leave_id = l.leave_id&#xD;&#xA;           and t.leave_frdate &gt;= TRUNC(SYSDATE, 'MM')&#xD;&#xA;           And t.leave_todate &lt;= trunc(sysdate)-1)&#xD;&#xA; order by emp_name,leave_frdate">
+                  <ui:ExecuteQuery.Parameters>
+                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                  </ui:ExecuteQuery.Parameters>
+                </ui:ExecuteQuery>
+                <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[PreviousRpt]" DisplayName="Previous MTD" ExistingDbConnection="[DB_CONN]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_3" Sql="--------Leave Type Report-------&#xD;&#xA;select *&#xD;&#xA;  from (select a.emp_code,&#xD;&#xA;               a.emp_name,&#xD;&#xA;               l.leave_type,&#xD;&#xA;               t.leave_frdate,&#xD;&#xA;               t.leave_todate,&#xD;&#xA;               t.leave_days&#xD;&#xA;          from mana0809.employee_master  a,&#xD;&#xA;               mana0809.employ_leave_dtl t,&#xD;&#xA;               mana0809.leave_master     l&#xD;&#xA;         where a.emp_code = t.emp_code&#xD;&#xA;           and t.leave_process_id = 1&#xD;&#xA;           and a.status_id = 1&#xD;&#xA;           and a.emp_type &lt;&gt; 4&#xD;&#xA;           and a.department_id = 645&#xD;&#xA;           and t.leave_id &lt;&gt; 4&#xD;&#xA;           and t.leave_id = l.leave_id&#xD;&#xA;           and t.leave_frdate between add_months(trunc(sysdate,'mm'),-1)&#xD;&#xA;           And last_day(add_months(trunc(sysdate,'mm'),-1))&#xD;&#xA;        union all&#xD;&#xA;        select a.emp_code,&#xD;&#xA;               a.emp_name,&#xD;&#xA;               l.leave_type,&#xD;&#xA;               t.leave_frdate,&#xD;&#xA;               t.leave_todate,&#xD;&#xA;               t.leave_days&#xD;&#xA;          from mana0809.employee_master  a,&#xD;&#xA;               mana0809.employ_leave_dtl t,&#xD;&#xA;               mana0809.leave_master     l&#xD;&#xA;         where a.emp_code = t.emp_code&#xD;&#xA;           and t.leave_process_id in (1, 2)&#xD;&#xA;           and a.status_id = 1&#xD;&#xA;           and a.emp_type &lt;&gt; 4&#xD;&#xA;           and a.department_id = 645&#xD;&#xA;           and t.leave_id = 4&#xD;&#xA;           and t.leave_id = l.leave_id&#xD;&#xA;           and t.leave_frdate between add_months(trunc(sysdate,'mm'),-1)&#xD;&#xA;           And last_day(add_months(trunc(sysdate,'mm'),-1))&#xD;&#xA;        union all&#xD;&#xA;        select a.emp_code,&#xD;&#xA;               a.emp_name,&#xD;&#xA;               l.leave_type,&#xD;&#xA;               t.leave_frdate,&#xD;&#xA;               t.leave_todate,&#xD;&#xA;               t.leave_days&#xD;&#xA;          from mana0809.employee_master           a,&#xD;&#xA;               mana0809.HRM_EMP_LEAVE_APPLICATION t,&#xD;&#xA;               mana0809.leave_master              l&#xD;&#xA;         where a.emp_code = t.emp_code&#xD;&#xA;           and a.status_id = 1&#xD;&#xA;           and a.emp_type &lt;&gt; 4&#xD;&#xA;           and a.department_id = 645&#xD;&#xA;           and t.status_id = 2&#xD;&#xA;           and t.leave_id = 5&#xD;&#xA;           and t.leave_id = l.leave_id&#xD;&#xA;           and t.leave_frdate between add_months(trunc(sysdate,'mm'),-1)&#xD;&#xA;           And last_day(add_months(trunc(sysdate,'mm'),-1)))&#xD;&#xA; order by emp_name,leave_frdate">
+                  <ui:ExecuteQuery.Parameters>
+                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                  </ui:ExecuteQuery.Parameters>
+                </ui:ExecuteQuery>
+                <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[YTDRpt]" DisplayName="YTD" ExistingDbConnection="[DB_CONN]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_4" Sql="--------Leave Type Report-------&#xD;&#xA;select *&#xD;&#xA;  from (select a.emp_code,&#xD;&#xA;               a.emp_name,&#xD;&#xA;               l.leave_type,&#xD;&#xA;               t.leave_frdate,&#xD;&#xA;               t.leave_todate,&#xD;&#xA;               t.leave_days&#xD;&#xA;          from mana0809.employee_master  a,&#xD;&#xA;               mana0809.employ_leave_dtl t,&#xD;&#xA;               mana0809.leave_master     l&#xD;&#xA;         where a.emp_code = t.emp_code&#xD;&#xA;           and t.leave_process_id = 1&#xD;&#xA;           and a.status_id = 1&#xD;&#xA;           and a.emp_type &lt;&gt; 4&#xD;&#xA;           and a.department_id = 645&#xD;&#xA;           and t.leave_id &lt;&gt; 4&#xD;&#xA;           and t.leave_id = l.leave_id&#xD;&#xA;           and t.leave_frdate &gt;= '01-Apr-2024'&#xD;&#xA;           And t.leave_todate &lt;= trunc(sysdate)-1&#xD;&#xA;        union all&#xD;&#xA;        select a.emp_code,&#xD;&#xA;               a.emp_name,&#xD;&#xA;               l.leave_type,&#xD;&#xA;               t.leave_frdate,&#xD;&#xA;               t.leave_todate,&#xD;&#xA;               t.leave_days&#xD;&#xA;          from mana0809.employee_master  a,&#xD;&#xA;               mana0809.employ_leave_dtl t,&#xD;&#xA;               mana0809.leave_master     l&#xD;&#xA;         where a.emp_code = t.emp_code&#xD;&#xA;           and t.leave_process_id in (1, 2)&#xD;&#xA;           and a.status_id = 1&#xD;&#xA;           and a.emp_type &lt;&gt; 4&#xD;&#xA;           and a.department_id = 645&#xD;&#xA;           and t.leave_id = 4&#xD;&#xA;           and t.leave_id = l.leave_id&#xD;&#xA;           and t.leave_frdate &gt;= '01-Apr-2024'&#xD;&#xA;           And t.leave_todate &lt;= trunc(sysdate)-1&#xD;&#xA;        union all&#xD;&#xA;        select a.emp_code,&#xD;&#xA;               a.emp_name,&#xD;&#xA;               l.leave_type,&#xD;&#xA;               t.leave_frdate,&#xD;&#xA;               t.leave_todate,&#xD;&#xA;               t.leave_days&#xD;&#xA;          from mana0809.employee_master           a,&#xD;&#xA;               mana0809.HRM_EMP_LEAVE_APPLICATION t,&#xD;&#xA;               mana0809.leave_master              l&#xD;&#xA;         where a.emp_code = t.emp_code&#xD;&#xA;           and a.status_id = 1&#xD;&#xA;           and a.emp_type &lt;&gt; 4&#xD;&#xA;           and a.department_id = 645&#xD;&#xA;           and t.status_id = 2&#xD;&#xA;           and t.leave_id = 5&#xD;&#xA;           and t.leave_id = l.leave_id&#xD;&#xA;           and t.leave_frdate &gt;= '01-Apr-2024'&#xD;&#xA;           And t.leave_todate &lt;= trunc(sysdate)-1)&#xD;&#xA; order by emp_name,leave_frdate">
+                  <ui:ExecuteQuery.Parameters>
+                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                  </ui:ExecuteQuery.Parameters>
+                </ui:ExecuteQuery>
+              </Sequence>
+            </ui:DatabaseTransaction.Body>
+          </ui:DatabaseTransaction>
+          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="663,669" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[Folder_path+In_Config(&quot;File&quot;).ToString]">
+            <ui:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,560" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExcelWriteRange AddHeaders="False" DataTable="[Todayrpt]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Today Punching" StartingCell="A1" />
+                  <ui:ExcelWriteRange AddHeaders="True" DataTable="[MTDRpt]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_3" SheetName="MTD" StartingCell="A1" />
+                  <ui:ExcelWriteRange AddHeaders="True" DataTable="[YTDRpt]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_4" SheetName="YTD" StartingCell="A1" />
+                  <ui:ExcelWriteRange AddHeaders="True" DataTable="[PreviousRpt]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Previous" StartingCell="A1" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ExcelApplicationScope.Body>
+          </ui:ExcelApplicationScope>
+          <ui:DatabaseDisconnect DatabaseConnection="[DB_CONN]" DisplayName="Disconnect from database" sap:VirtualizedContainerService.HintSize="663,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
+          <Assign sap:VirtualizedContainerService.HintSize="663,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[Arg_Status]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="709,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[exception.Message]" />
+              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[Arg_Status]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
